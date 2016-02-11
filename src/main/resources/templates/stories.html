@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body>
+	<ul>
+		<li th:each="story : ${stories}">
+			<a href="#" th:href="@{/viewStory/}+${story.getId()}" th:text="${story.getTitle()}"></a>
+		</li>
+	</ul>
+	<p>qpefjwef</p>
+</body>
+</html>

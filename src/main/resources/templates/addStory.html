@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<form action="#" th:action="@{/addStory}" th:object="${story}" method="post">
+		<input type="text" th:field="*{name}"></input>
+		<textarea th:field="*{first}"></textarea>
+		<input type="submit"></input>
+	</form>
+</body>
+</html>

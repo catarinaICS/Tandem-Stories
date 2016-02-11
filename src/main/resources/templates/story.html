@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+	<h2 th:text="${story.getTitle()}"></h2>
+	<div th:each="par : ${pars}">
+	<p th:text="${par.getText()}"></p>
+	<a href="#" th:onclick="'x('+'\''+${par.getId()}+'\''+','+'\''+${story.getId()}+'\''+')'">Remove</a>
+	</div>
+	<a href="#" th:href="@{/appendParagraph/} + ${story.getId()} +'/'+ ${last.getId()} ">Add Paragraph</a>
+	
+
+</body>
+
+<script type="text/javascript" th:inline="javascript">
+	var x = function(par, story){
+		var answer = window.confirm("Warning: This will erase all the subsequent paragraphs. Are you sure you want to erase?")
+		console.log(par);
+		console.log(story);
+
+		if(answer){
+			var loc = /*[[@{/removeParagraph/}]]*/;
+			loc+= story + '/' + par;
+			window.location =loc;
+		}
+	}
+</script>
+</html>

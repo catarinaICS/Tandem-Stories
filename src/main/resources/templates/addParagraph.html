@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<form action="#" th:action="@{/appendParagraph/}+${storyId}+'/'+${lastPar}" th:object="${par}" method="post">
+		<textarea th:field="*{text}"></textarea>
+		<input type="submit"></input>
+	</form>
+</body>
+</html>
